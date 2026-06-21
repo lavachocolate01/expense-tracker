@@ -1,7 +1,9 @@
-// 🌌 檢查網址有沒有未授權的錯誤標記
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get('error') === 'unauthorized') {
+    // 1. 立刻彈出老師要求的警告視窗
     alert('⚠️ 未授權：請先登入系統！');
+    
+    // 2. 把網址上的醜醜參數清掉，恢復乾淨的主網址
     window.history.replaceState({}, document.title, window.location.pathname);
 }
 <!DOCTYPE html>
