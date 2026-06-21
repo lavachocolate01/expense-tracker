@@ -1,3 +1,9 @@
+// 🌌 檢查網址有沒有未授權的錯誤標記
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('error') === 'unauthorized') {
+    alert('⚠️ 未授權：請先登入系統！');
+    window.history.replaceState({}, document.title, window.location.pathname);
+}
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
