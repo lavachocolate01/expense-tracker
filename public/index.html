@@ -8,35 +8,67 @@
 <style>
     .hidden { display: none !important; }
 
-    /* 🌌 全域星空背景設定 */
+    /* 🌌 深邃宇宙星空背景 */
     body {
-      background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #16213e 50%, #0f172a 100%) !important;
+      background: radial-gradient(circle at 50% 50%, #0a0f1d 0%, #070a14 70%, #020408 100%) !important;
       position: relative;
       overflow-x: hidden;
       min-height: 100vh;
+      color: #ffffff !important; /* 強制全域文字變白 */
     }
 
-    /* ✨ 利用偽元素幫網頁加上微微的星光點綴 */
+    /* ✨ 精緻星光層 */
     body::before {
       content: "";
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
       background-image: 
-        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
-      background-size: 550px 550px, 350px 350px, 250px 250px;
-      background-position: 0 0, 40px 60px, 130px 270px;
-      opacity: 0.4;
+        radial-gradient(white, rgba(255,255,255,.4) 1.5px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 20px);
+      background-size: 350px 350px, 200px 200px;
+      background-position: 0 0, 40px 60px;
+      opacity: 0.6;
       z-index: -1;
       pointer-events: none;
     }
 
-    /* 📝 為了讓原本的白色卡片在深色背景下更好看，幫卡片加上一點點半透明玻璃質感（選用） */
+    /* 🔮 深色半透明玻璃卡片：背景加深，字體才會突出 */
     .card {
-      background: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: blur(5px);
-      border: none !important;
+      background: rgba(15, 23, 42, 0.85) !important; 
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+    }
+
+    /* ✍️ 暴力大絕招：強制把所有卡片內的標題、標籤、表格文字通通變純白 */
+    h2, h3, h4, .card-title, label, th, td, p, span {
+      color: #ffffff !important;
+    }
+
+    /* 📥 修正輸入框與下拉選單：讓它在黑底裡清晰可見 */
+    .form-control, .form-select {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+    }
+    
+    /* 修正輸入框裡面提示字的顏色 */
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    /* 當滑鼠點擊輸入框時的聚焦狀態 */
+    .form-control:focus, .form-select:focus {
+      background-color: rgba(255, 255, 255, 0.15) !important;
+      color: #ffffff !important;
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25) !important;
+    }
+
+    /* 顯示「歡迎回來，s24113110！」那一行的顏色修正 */
+    .container div, .container h2 {
+      color: #ffffff !important;
     }
   </style>
 </head>
