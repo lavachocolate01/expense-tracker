@@ -91,6 +91,18 @@
     .container div, .container h2 {
       color: #ffffff !important;
     }
+
+/* 🌌 修正後：去掉 select 後面那個多餘的點，改用正常的 Bootstrap 類別選取器 */
+select.form-select {
+    color: #ffffff !important; /* 未點開時，框框內的文字維持白色 */
+    background-color: #222533 !important; /* 框框底色搭配你的太空深藍 */
+}
+
+/* 🎯 修正後：中間用空格隔開，代表選取 .form-select 裡面的 option */
+select.form-select option {
+    background-color: #1e2230 !important; /* 彈出選單的深色背景 */
+    color: #ffffff !important;            /* 彈出選單的白色文字，清晰可見！ */
+}
   </style>
 </head>
 <body class="bg-light">
